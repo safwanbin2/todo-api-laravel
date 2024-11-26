@@ -4,7 +4,7 @@ use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
 // getting all the todos
-Route::get("/", [TodoController::class, 'index']);
+// Route::get("/", [TodoController::class, 'index']);
 
 // adding new todos
 Route::post('/', [TodoController::class, 'store'])->middleware(['auth-guard']);
@@ -16,13 +16,15 @@ Route::get("/find", [TodoController::class, 'find']);
 Route::get('/summary', [TodoController::class, 'summary']);
 
 // getting single todo
-Route::get('/{id}', [TodoController::class, 'show']);
+// Route::get('/{id}', [TodoController::class, 'show']);
 
 // updating todo
-Route::patch('/{id}', [TodoController::class, 'update']);
+// Route::patch('/{id}', [TodoController::class, 'update']);
 
 // deleting todo
-Route::delete('/{id}', [TodoController::class, 'destroy']);
+// Route::delete('/{id}', [TodoController::class, 'destroy']);
 
 // marking complete a todo
 Route::patch('/{id}/complete', [TodoController::class, 'markComplete']);
+
+Route::resource('/', TodoController::class);

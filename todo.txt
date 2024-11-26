@@ -1,0 +1,3 @@
+resource router
+api feature
+service controller
